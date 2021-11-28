@@ -1,0 +1,68 @@
+<!-- CONTENT =============================-->
+<section class="item content">
+    <div class="container toparea">
+        <div class="underlined-title">
+            <div class="editContent">
+                <h1 class="text-center latestitems">¡Comparte tu opinión con nosotros!</h1>
+                <p>
+                    Recuerda que tus comentarios nos ayudan a mejorar y nos motivan a esforzarnos para seguir ofreciendo
+                    una atención inmejorable. ¿Nos dejas tu opinión? Solo tienes que hacer click en el boton de abajo.
+                    ¡Apenas te llevará unos instantes y será de gran utilidad para nosotros!
+                </p>
+            </div>
+            <div class="wow-hr type_short">
+                <span class="wow-hr-h">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                </span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2">
+                <div class="done">
+                    <div class="alert alert-success">
+                        <button type="button" class="close" data-dismiss="alert">×</button>
+                        Tu mensaje fue enviado. Gracias!
+                    </div>
+                </div>
+                <form id="contactform" [formGroup]="coments">
+                    <div class="form">
+                        <input formControlName="name" type="text" name="name" placeholder="Nombre *">
+                        <input formControlName="email" type="text" name="email" placeholder="Correo Electronico *">
+                        <textarea formControlName="comentario" name="comment" rows="7" placeholder="Tu Mensaje *"></textarea>
+                        <input type="button" (click)="submit()" class="clearfix btn" value="Enviar">
+                        <div style="display:none;" id="ah recuerde llenar el formulario"
+                        class="text-center"> 
+                        <h2>
+                           ah recuerde llenar el formulario
+                        </h2>
+                       </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+
+        <app-comentario-normal
+        coment ="hola parce, esto es una prueba"
+        fecha ="justo ayer"
+        name="cabiver">
+
+        </app-comentario-normal>
+
+        <div  *ngFor="let item of arrayComentens">
+
+            <app-comentario-normal
+            coment ="{{item.comentario}}"
+            fecha ="{{item.fecha}}"
+            name="{{item.name}}"
+            id="{{item.id}}">
+
+            </app-comentario-normal>
+        </div>
+    </div>
+    
+
+</section>
